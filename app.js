@@ -41,6 +41,11 @@ app.use('/api/socios', socioRoutes);
 const adminRoutes = require('./routes/admin');
 app.use('/admin', adminRoutes);
 
+// Ruta raíz para evitar error en Render
+app.get('/', (req, res) => {
+  res.redirect('/admin');
+});
+
 // Iniciar servidor
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
