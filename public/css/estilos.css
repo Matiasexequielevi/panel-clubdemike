@@ -1,0 +1,125 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.panel {
+  max-width: 600px;
+  margin: auto;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  max-width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Título principal */
+.panel h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Botón principal */
+.btn-principal {
+  display: inline-block;
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: #27ae60;
+}
+
+/* Botón volver */
+.btn-volver {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-volver:hover {
+  background-color: #fff;
+  color: #121212;
+}
+
+/* Lista de productos */
+.producto {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.producto p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Botones editar/eliminar */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-editar {
+  background-color: #3498db;
+  margin-right: 10px;
+}
+
+.btn-editar:hover {
+  background-color: #2980b9;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Socios - Panel de Control</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to right, #ffffff, #d4f5e6);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .logo {
+      height: 80px;
+      filter: drop-shadow(0 0 6px #fcd000aa);
+    }
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #222;
+    }
+    .linea {
+      height: 4px;
+      width: 100%;
+      background: #2a9d5a;
+      margin: 10px 0 30px;
+    }
+    .btn-agregar {
+      background: #2a9d5a;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 20px;
+    }
+    .btn-agregar:hover {
+      background: #227a49;
+    }
+    .socio-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/images/logo.png" alt="Logo" class="logo" />
+    <h1>PANEL DE CONTROL - SOCIOS</h1>
+    <div class="linea"></div>
+  </header>
+
+  <main class="container">
+    <div class="mb-4 text-end">
+      <a href="/admin/socios/nuevo" class="btn btn-agregar">+ Agregar nuevo socio</a>
+    </div>
+
+    <div class="row">
+      <% socios.forEach(socio => { %>
+        <div class="col-md-6 col-lg-4">
+          <div class="socio-card">
+            <h5><%= socio.nombre %> <%= socio.apellido %></h5>
+            <p>Email: <%= socio.email %></p>
+            <p>Membresía: <%= socio.estadoMembresia %></p>
+            <p>Puntos: <%= socio.puntos %></p>
+            <a href="/admin/socios/<%= socio._id %>/editar" class="btn btn-sm btn-outline-primary">Editar</a>
+            <form action="/admin/socios/<%= socio._id %>?_method=DELETE" method="POST" class="d-inline">
+              <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <footer>
+    Todos los derechos reservados - Levi Desarrollos Web
+  </footer>
+</body>
+</html>
